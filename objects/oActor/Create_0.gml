@@ -10,6 +10,8 @@ name = "Default";
 // Character statistics
 move = 5;
 actions = 2;
+initiative = 0;
+initRoll = 0;
 
 // Pathfinding variables
 movementPath = path_add();

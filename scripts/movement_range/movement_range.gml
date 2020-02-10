@@ -84,7 +84,7 @@ with(oNode) {
 	G = floor(G);	
 }
 
-// Destroy open
+// Destroy open list
 ds_priority_destroy(open);
 
 // Color move nodes
@@ -94,9 +94,10 @@ for(ii = 0; ii < ds_list_size(closed); ii++) {
 	color_move_node(current, argument1, argument2);
 }
 
-// Destory closed
-ds_list_destroy(closed);
+start.moveNode = false;
 
+// Destory closed list
+ds_list_destroy(closed);
 
 
 

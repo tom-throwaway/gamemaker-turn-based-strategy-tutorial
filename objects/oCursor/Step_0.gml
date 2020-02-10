@@ -1,4 +1,4 @@
-  /// @description Insert description here
+   /// @description Insert description here
 // You can write your code in this editor
 
 x = mouse_x;
@@ -14,19 +14,19 @@ else {
 	hoverNode = map[gridX, gridY];
 }
 
-if(mouse_check_button_pressed(mb_left)) {
-	if(hoverNode.occupant != noone) {
-		if(hoverNode.occupant != selectedActor) {
-			selectedActor = hoverNode.occupant;
-			selectedActor.actions = 2;
-			movement_range(hoverNode, selectedActor.move, selectedActor.actions);
-		}
-	}
-	else {
-		selectedActor = noone;
-		wipe_nodes();
-	}
-}
+//if(mouse_check_button_pressed(mb_left)) {
+//	if(hoverNode.occupant != noone) {
+//		if(hoverNode.occupant != selectedActor) {
+//			selectedActor = hoverNode.occupant;
+//			selectedActor.actions = 2;
+//			movement_range(hoverNode, selectedActor.move, selectedActor.actions);
+//		}
+//	}
+//	else {
+//		selectedActor = noone;
+//		wipe_nodes();
+//	}
+//}
 
 if(mouse_check_button_pressed(mb_right)) {
 	if(selectedActor != noone && hoverNode.moveNode) {
@@ -74,8 +74,8 @@ if(mouse_check_button_pressed(mb_right)) {
 		
 		selectedActor = noone;
 	}
-	else {
-		selectedActor = noone;
-		wipe_nodes();
-	}
+	//else {
+	//	selectedActor = noone;
+	//	wipe_nodes();
+	//}
 }

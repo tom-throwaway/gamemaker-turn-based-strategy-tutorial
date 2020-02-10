@@ -1,14 +1,22 @@
-/// @description Insert description here
+ /// @description Insert description here
 // You can write your code in this editor
 global.GRID_SIZE = 32;
 globalvar map;
 
 state = "initialising";
 
+randomize();
+
+turnOrder = ds_list_create();
+turnCounter = -1;
+turnMax = 0;
+currentActor = noone;
+roundCounter = 0; 
+
 mapWidth = room_width / global.GRID_SIZE;
 mapHeight = room_height / global.GRID_SIZE;
 
-// Create the grid
+// Crea te the grid
 for(xx = 0; xx < mapWidth; xx++) {
 	for(yy = 0; yy < mapHeight; yy++) {
 		map[xx,yy] = instance_create_layer(xx * global.GRID_SIZE, yy * global.GRID_SIZE, "instances", oNode);
