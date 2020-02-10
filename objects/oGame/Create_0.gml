@@ -1,6 +1,10 @@
  /// @description Insert description here
 // You can write your code in this editor
 global.GRID_SIZE = 32;
+global.RED_ARMY = 10;
+global.BLUE_ARMY = 20;
+
+
 globalvar map;
 
 state = "initialising";

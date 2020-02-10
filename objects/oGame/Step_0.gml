@@ -64,8 +64,15 @@ switch(state) {
 			currentActor = ds_list_find_value(turnOrder, turnCounter);
 			
 			currentActor.actions = 2;
-			oCursor.selectedActor = currentActor;
-			movement_range(map[currentActor.gridX, currentActor.gridY], currentActor.move, currentActor.actions);
+			
+			if(currentActor.army == global.BLUE_ARMY) {
+				oCursor.selectedActor = currentActor;
+				movement_range(map[currentActor.gridX, currentActor.gridY], currentActor.move, currentActor.actions);
+			}
+			else {
+				currentActor.flash = true;
+				currentActor.alarm[0] = 30;
+			}
 		}
 	
 		break;
