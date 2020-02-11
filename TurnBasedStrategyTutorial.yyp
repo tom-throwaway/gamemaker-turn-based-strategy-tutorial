@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "12291e74-7881-4ed8-a213-4076595646f8",
+            "Value": {
+                "id": "753d671d-74a1-4715-84a2-911437d010df",
+                "resourcePath": "objects\\oArrow\\oArrow.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "13dcf667-50f6-4660-b26c-981f0ea80ad0",
             "Value": {
                 "id": "24058a97-50f3-4ad6-bb6c-338ed1aa0158",
@@ -95,11 +103,27 @@
             }
         },
         {
+            "Key": "300f036d-b082-4ef5-b283-701c88cb7eb3",
+            "Value": {
+                "id": "bbd19f01-d850-4848-b33a-e96ec7c2bb0d",
+                "resourcePath": "fonts\\fCrit\\fCrit.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "35e1e452-08f3-41f2-bd66-a58a8fdd6167",
             "Value": {
                 "id": "03d5c3ad-e6eb-42b5-b0db-4bb444a181ff",
                 "resourcePath": "objects\\oDanny\\oDanny.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "39d5c0ca-3b19-48e9-a802-8b59bd6d5942",
+            "Value": {
+                "id": "23866e15-128b-4637-934e-75c4473a2ecc",
+                "resourcePath": "sprites\\sArrow\\sArrow.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -111,10 +135,26 @@
             }
         },
         {
+            "Key": "4041ac9f-a574-468a-b0e4-e471b561868a",
+            "Value": {
+                "id": "89033ec6-adf1-4655-903a-214b2400284d",
+                "resourcePath": "fonts\\fDamage\\fDamage.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "433c93ce-d29a-4882-b349-41e6c5ce819d",
             "Value": {
                 "id": "e60cd971-179e-417d-81a5-d5d4c5475395",
                 "resourcePath": "objects\\oTarget\\oTarget.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "44662ae1-5747-45aa-8729-c731fca548e1",
+            "Value": {
+                "id": "374da116-93d4-458c-975d-3f3cf13e14cd",
+                "resourcePath": "objects\\oRangedAttack\\oRangedAttack.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -191,6 +231,14 @@
             }
         },
         {
+            "Key": "7bcbe2cf-b9e6-41f5-b75d-23272caace77",
+            "Value": {
+                "id": "d18b022c-fd11-4724-a3b8-45f217723cd9",
+                "resourcePath": "sprites\\sBiff\\sBiff.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7e2fa03b-b1d1-4ba8-9b2b-81efc28d012a",
             "Value": {
                 "id": "7b3f37bf-a768-46b0-90b9-45d26a61c134",
@@ -204,6 +252,14 @@
                 "id": "b567314e-4555-4514-a26c-9e510a2080e1",
                 "resourcePath": "views\\861a70cb-1f22-4020-b9df-db55bfc7d9df.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8f351cae-66b1-46a7-9459-789e14b52a50",
+            "Value": {
+                "id": "2ababf15-b275-4f80-9553-70b23f4a7905",
+                "resourcePath": "objects\\oBiff\\oBiff.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -239,6 +295,14 @@
             }
         },
         {
+            "Key": "a4862ebb-66e7-4caf-a09b-a25db06b35ba",
+            "Value": {
+                "id": "5f2c6866-130d-4293-b450-4eaee9f44976",
+                "resourcePath": "objects\\oDamageText\\oDamageText.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a5b22481-c4a9-4ad9-aec4-1c7d8860592f",
             "Value": {
                 "id": "93507fb1-32f4-4b5e-9ab6-8885f25284fa",
@@ -260,6 +324,14 @@
                 "id": "c36453a5-f729-4002-8b76-28a0411f9070",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "b4e50dc9-7e54-4cc2-a2ec-5d0c1ae60cfe",
+            "Value": {
+                "id": "2d934d7e-d93c-4434-8d81-3ac51a7f80e7",
+                "resourcePath": "fonts\\fDefault\\fDefault.yy",
+                "resourceType": "GMFont"
             }
         },
         {

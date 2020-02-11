@@ -56,4 +56,8 @@ movementPath = path_add();
 path_set_kind(movementPath, 2);
 path_set_closed(movementPath, false);
 
-moveSpeed = 8; 
+moveSpeed = 8;
+
+// Variables related to effects
+shake = 0;
+shakeMag = 0;

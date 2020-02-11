@@ -9,6 +9,7 @@ globalvar map;
 
 state = "initialising";
 
+draw_set_font(fDefault);
 randomize();
 
 turnOrder = ds_list_create();

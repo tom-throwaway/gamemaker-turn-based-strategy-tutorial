@@ -74,8 +74,15 @@ if(mouse_check_button_pressed(mb_right)) {
 		
 		selectedActor = noone;
 	}
-	//else {
-	//	selectedActor = noone;
-	//	wipe_nodes();
-	//}
+	
+	if(selectedActor != noone && hoverNode.attackNode) {
+		selectedActor.canAct = false;
+		selectedActor.actions -= 1;
+		selectedActor.attackTarget = hoverNode.occupant;
+		selectedActor.state = "beginAttack";
+		selectedActor.attackTimer = 10;
+		
+		selectedActor = noone;
+		wipe_nodes();
+	}
 }
