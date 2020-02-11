@@ -9,13 +9,13 @@ switch(state) {
 				tempTerrain = instance_position(x + 16, y + 16, oTerrain);
 				switch(tempTerrain.type) {
 					case "wall":
+						instance_change(oWall, true);
 						type = "wall";
 						passable = false;
-						sprite_index = sWall;
 						break;
 					case "rubble":
+						instance_change(oRubble, true); 
 						type = "rubble";
-						sprite_index = sRubble;
 						cost = 2;
 						break;
 				}
@@ -64,10 +64,17 @@ switch(state) {
 			currentActor = ds_list_find_value(turnOrder, turnCounter);
 			
 			currentActor.actions = 2;
+			currentActor.canAct = true;
 			
 			if(currentActor.army == global.BLUE_ARMY) {
 				oCursor.selectedActor = currentActor;
 				movement_range(map[currentActor.gridX, currentActor.gridY], currentActor.move, currentActor.actions);
+			
+				switch(currentActor.attackType) {
+					case "ranged":
+						ranged_attack_range(currentActor);
+						break;
+				}
 			}
 			else {
 				currentActor.flash = true;

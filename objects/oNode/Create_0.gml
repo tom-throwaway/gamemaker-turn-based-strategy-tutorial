@@ -16,6 +16,8 @@ type = "node";
 // Pathfinding variables
 G = 0;
 moveNode = false;
+
+attackNode =false;
 parent = noone;
 
 // Cost to move through

@@ -3,23 +3,45 @@
 event_inherited();
 
 name = "Sandy";
-
-// Character statistics
-move = 7;
-actions = 2;
-initRoll = 0;
-
-// Game specific - D&D
 class = "Rogue";
 race = "Elf";
+
 level = 1;
+
+// Character statistics //////////////////////////////////////
+
+// Base stats
 profMod = 2 + floor(level / 5);
 strMod = 0;
 dexMod = 3;
 conMod = 2;
 intMod = 1;
 wisMod = 0;
+
+// Health variables
 maxHitPoints = 6 + conMod + ((level - 1) * (4 + conMod));
 hitPoints = maxHitPoints;
+
+// Attack variables
 hitBonus = profMod + dexMod;
+attackType = "ranged";
+attackRange = 15 * global.GRID_SIZE;
+attackTarget = noone;
+attackTimer = 0;
+
+// Damage variables
+damageDice = 4;
+damageBonus = strMod;
+damageType = "piercing";
+
+// Defence variables
+armourClass = 10 + dexMod;
+
+// Move and action vars
+move = 7;
+actions = 2;
+canAct = false;
+
+// Initiative variables
 initiative = dexMod;
+initRoll = 0;

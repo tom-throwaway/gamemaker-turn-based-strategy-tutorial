@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "447b20ce-c947-4001-8111-f0c87e3509bf",
+            "Value": {
+                "id": "471bef0a-3963-4340-b21a-f18459faa3e0",
+                "resourcePath": "scripts\\ranged_attack_range\\ranged_attack_range.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4c820087-c601-4c73-bc6a-8d34d0af99cb",
             "Value": {
                 "id": "2dde6f00-eea4-43f3-b90e-bbf6de5a52a0",
@@ -370,7 +378,8 @@
     "script_order": [
         "284e6865-f804-47ed-a31b-f06a67a411d8",
         "deb248e4-99dc-4650-9ef8-414df2adeb37",
-        "77cc5b63-9001-4033-b225-8bc6e23f80f5"
+        "77cc5b63-9001-4033-b225-8bc6e23f80f5",
+        "447b20ce-c947-4001-8111-f0c87e3509bf"
     ],
     "tutorial": ""
 }

@@ -7,6 +7,14 @@ state = "idle";
 if(actions > 0) {
 	oCursor.selectedActor = id;
 	movement_range(map[gridX, gridY], move, actions);
+	
+	if(canAct) {
+		switch(attackType) {
+			case "ranged":
+				ranged_attack_range(id);
+				break;
+		}
+	}
 }
 else {
 	oGame.currentActor = noone;
