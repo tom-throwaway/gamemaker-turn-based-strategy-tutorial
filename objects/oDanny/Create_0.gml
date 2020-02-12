@@ -41,6 +41,9 @@ move = 5;
 actions = 2;
 canAct = false;
 
+// Special action variables
+charge = true;
+
 // Initiative variables
 initiative = dexMod;
 initRoll = 0;

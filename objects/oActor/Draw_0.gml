@@ -22,6 +22,33 @@ if(oCursor.selectedActor == id) {
 				case "ranged":
 					draw_line_width_color(x + 16, y + 16, tempNode.x + 16, tempNode.y + 16, 4, c_purple, c_purple);
 					break;
+				case "melee":
+					tempX = abs(tempNode.gridX - gridX);
+					tempY = abs(tempNode.gridY - gridY);
+					
+					if(tempX <= 1 && tempY <= 1) {
+						draw_line_width_color(x + 16, y + 16, tempNode.x + 16, tempNode.y + 16, 4, c_purple, c_purple);	
+					}
+					else {
+						current = noone;
+						tempG = 100;
+						
+						for(ii = 0; ii < ds_list_size(tempNode.neighbours); ii++) {
+							neighbour = ds_list_find_value(tempNode.neighbours, ii);
+							
+							if(neighbour.occupant == noone && neighbour.G > 0 && neighbour.G < tempG) {
+								tempG = neighbour.G;
+								current = neighbour;
+							}
+						}
+						
+						draw_line_width_color(tempNode.x + 16, tempNode.y + 16, current.x + 16, current.y + 16, 4, c_purple, c_purple);
+						while(current.parent != noone) {
+							draw_line_width_color(current.x + 16, current.y + 16, current.parent.x + 16, current.parent.y + 16, 4, c_purple, c_purple);
+							current = current.parent;
+						}
+					}
+					break;
 			}
 		}
 	}
@@ -33,3 +60,4 @@ if(shake > 0) {
 else {
 	draw_self();
 }
+

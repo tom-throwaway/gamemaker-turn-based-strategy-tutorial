@@ -74,6 +74,9 @@ switch(state) {
 					case "ranged":
 						ranged_attack_range(currentActor);
 						break;
+					case "melee":
+						melee_attack_range(currentActor);
+						break;
 				}
 			}
 			else {

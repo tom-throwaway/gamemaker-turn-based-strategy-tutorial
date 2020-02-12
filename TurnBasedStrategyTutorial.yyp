@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "2c2b08b4-833e-49be-8a4a-f243de93bf20",
+            "Value": {
+                "id": "9764f4b0-e197-47c4-8516-6e116420ed77",
+                "resourcePath": "scripts\\create_path\\create_path.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "300f036d-b082-4ef5-b283-701c88cb7eb3",
             "Value": {
                 "id": "bbd19f01-d850-4848-b33a-e96ec7c2bb0d",
@@ -279,6 +287,14 @@
             }
         },
         {
+            "Key": "9ab92993-adac-4a08-af7c-66ea954e9316",
+            "Value": {
+                "id": "bf7f2315-1e18-4ead-973f-5e92f7cfa390",
+                "resourcePath": "scripts\\melee_attack_range\\melee_attack_range.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9c778fe6-0f8e-4b83-b6df-a5f850eafd6a",
             "Value": {
                 "id": "ba9cd1a5-f5ac-4d39-9e8d-685823a7842e",
@@ -451,7 +467,9 @@
         "284e6865-f804-47ed-a31b-f06a67a411d8",
         "deb248e4-99dc-4650-9ef8-414df2adeb37",
         "77cc5b63-9001-4033-b225-8bc6e23f80f5",
-        "447b20ce-c947-4001-8111-f0c87e3509bf"
+        "447b20ce-c947-4001-8111-f0c87e3509bf",
+        "9ab92993-adac-4a08-af7c-66ea954e9316",
+        "2c2b08b4-833e-49be-8a4a-f243de93bf20"
     ],
     "tutorial": ""
 }

@@ -32,22 +32,7 @@ if(mouse_check_button_pressed(mb_right)) {
 	if(selectedActor != noone && hoverNode.moveNode) {
 		current = hoverNode;
 		
-		// Create priority queue to reverse node chain
-		// TODO - A stack would be a better choice
-		path = ds_priority_create();
-		ds_priority_add(path, current, current.G);
-		while(current.parent != noone) {
-			ds_priority_add(path, current.parent, current.parent.G);
-			current = current.parent;
-		}
-		
-		do {
-			current = ds_priority_delete_min(path);
-			// Add point to actors path
-			path_add_point(selectedActor.movementPath, current.x, current.y, 100);
-		}
-		until(ds_priority_empty(path));
-		ds_priority_destroy(path);
+		create_path(selectedActor, current);
 		
 		// Clear the node of selected actor
 		map[selectedActor.gridX, selectedActor.gridY].occupant = noone;
@@ -60,7 +45,8 @@ if(mouse_check_button_pressed(mb_right)) {
 		hoverNode.occupant = selectedActor;
 		
 		// Send actor on path
-		selectedActor.state = "beginpath";
+		selectedActor.state = "beginPath";
+		selectedActor.endPath = "ready";
 		
 		// Reduce selected actors actions and wipe nodes
 		if(hoverNode.G > selectedActor.move) {
@@ -76,13 +62,70 @@ if(mouse_check_button_pressed(mb_right)) {
 	}
 	
 	if(selectedActor != noone && hoverNode.attackNode) {
-		selectedActor.canAct = false;
-		selectedActor.actions -= 1;
-		selectedActor.attackTarget = hoverNode.occupant;
-		selectedActor.state = "beginAttack";
-		selectedActor.attackTimer = 10;
+		switch(selectedActor.attackType) {
+			case "ranged":
+				selectedActor.canAct = false;
+				selectedActor.actions -= 1;
+				selectedActor.attackTarget = hoverNode.occupant;
+				selectedActor.state = "beginAttack";
+				selectedActor.attackTimer = 10;
+				selectedActor = noone;
+				wipe_nodes();
+				break;
+			case "melee":
+				selectedActor.canAct = false;
+				selectedActor.attackTarget = hoverNode.occupant;
+				
+				tempX = abs(hoverNode.gridX - selectedActor.gridX);
+				tempY = abs(hoverNode.gridX - selectedActor.gridY);
+				if(tempX <= 1 && tempY <= 1) {
+					// Adjacent to target
+					selectedActor.actions -= 1;
+					selectedActor.state = "beginAttack";
+					selectedActor.attackTimer = 10;
+					selectedActor = noone;
+					wipe_nodes();
+				}
+				else {
+					// Not adjacent to target
+					tempG = 100;
+					current = noone;
+					
+					for(ii = 0; ii < ds_list_size(hoverNode.neighbours); ii++) {
+						tempNode = ds_list_find_value(hoverNode.neighbours, ii);
+						
+						if(tempNode.occupant == noone && tempNode.G > 0 && tempNode.G < tempG) {
+							tempG = tempNode.G;
+							current = tempNode;
+						}
+					}
+					
+					targetNode = current;
+					
+					create_path(selectedActor, targetNode);
+					
+					// Clear the node of selected actor
+					map[selectedActor.gridX, selectedActor.gridY].occupant = noone;
 		
-		selectedActor = noone;
-		wipe_nodes();
+					// Update actors grid coords
+					selectedActor.gridX = targetNode.gridX;
+					selectedActor.gridY = targetNode.gridY;
+		
+					// Update actors future node
+					targetNode.occupant = selectedActor;
+		
+					// Send actor on path
+					selectedActor.state = "beginPath";
+					selectedActor.endPath = "beginAttack";
+					selectedActor.attackTarget = hoverNode.occupant;
+					selectedActor.actions -= 2;
+					selectedActor.canAct = false;
+					selectedActor = noone;
+					wipe_nodes();
+				}
+				
+				break;
+		}
+		
 	}
 }

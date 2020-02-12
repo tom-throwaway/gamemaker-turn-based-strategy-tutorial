@@ -46,6 +46,10 @@ move = 6;
 actions = 2;
 canAct = false;
 
+// Special action variables
+charge = false;
+sneakAttack = false;
+
 // Initiative variables
 initiative = dexMod;
 initRoll = 0;
@@ -55,6 +59,8 @@ initRoll = 0;
 movementPath = path_add();
 path_set_kind(movementPath, 2);
 path_set_closed(movementPath, false);
+
+endPath = "idle";
 
 moveSpeed = 8;
 

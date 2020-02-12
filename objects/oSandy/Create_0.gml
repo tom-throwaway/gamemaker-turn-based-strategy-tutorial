@@ -30,8 +30,8 @@ attackTarget = noone;
 attackTimer = 0;
 
 // Damage variables
-damageDice = 4;
-damageBonus = strMod;
+damageDice = 6;
+damageBonus = dexMod;
 damageType = "piercing";
 
 // Defence variables
@@ -41,6 +41,10 @@ armourClass = 10 + dexMod;
 move = 7;
 actions = 2;
 canAct = false;
+
+// Special action variables
+sneakAttack = true;
+sneakAttackDamage = 6;
 
 // Initiative variables
 initiative = dexMod;
