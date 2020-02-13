@@ -94,10 +94,13 @@ for(ii = 0; ii < ds_list_size(closed); ii++) {
 	color_move_node(current, argument1, argument2);
 }
 
+
+// Destroy closed list
+ds_list_destroy(closed);
+
 start.moveNode = false;
 
-// Destory closed list
-ds_list_destroy(closed);
+create_buttons(start.occupant);
 
 
 

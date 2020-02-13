@@ -14,19 +14,69 @@ else {
 	hoverNode = map[gridX, gridY];
 }
 
-//if(mouse_check_button_pressed(mb_left)) {
-//	if(hoverNode.occupant != noone) {
-//		if(hoverNode.occupant != selectedActor) {
-//			selectedActor = hoverNode.occupant;
-//			selectedActor.actions = 2;
-//			movement_range(hoverNode, selectedActor.move, selectedActor.actions);
-//		}
-//	}
-//	else {
-//		selectedActor = noone;
-//		wipe_nodes();
-//	}
-//}
+with(oConfirmButton) {
+	if(keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord(hotKey))) {
+		other.selectedActor.state = "performAction";
+		instance_destroy();
+	}
+}
+
+if(instance_place(x, y, oButton)) {
+	if(instance_place(x, y, oButton) == hoverButton) {
+		buttonTimer += 1;	
+	}
+	else {
+		buttonTimer = 0;	
+	}
+	hoverButton = instance_place(x, y, oButton);	
+	hoverNode = noone;
+}
+else {
+	hoverButton = noone;	
+	buttonTimer = 0;
+}
+
+with(oButton) {
+	if(keyboard_check_pressed(ord(hotKey))) {
+		perform_buttons(oCursor.selectedActor, id);	
+	}
+}
+
+if(keyboard_check_pressed(vk_escape)) {
+	if(selectedActor.state == "beginAction") {
+		selectedActor.state = "idle";
+		with(oConfirmButton) {
+			instance_destroy();	
+		}
+	}
+	
+	wipe_nodes();
+	movement_range(map[selectedActor.gridX, selectedActor.gridY], selectedActor.move, selectedActor.actions);
+	
+	if(selectedActor.canAct) {
+		switch(selectedActor.attackType) {
+			case "ranged":
+				ranged_attack_range(selectedActor);
+				break;
+			case "melee":
+				melee_attack_range(selectedActor);
+				break;
+		}
+	}
+}
+
+if(mouse_check_button_pressed(mb_left)) {
+	if(selectedActor != noone && hoverButton != noone) {
+		perform_buttons(selectedActor, hoverButton);	
+	}
+	
+	if(instance_place(x, y, oConfirmButton)) {
+		selectedActor.state = "performAction";
+		with(oConfirmButton) {
+			instance_destroy();	
+		}
+	}
+}
 
 if(mouse_check_button_pressed(mb_right)) {
 	if(selectedActor != noone && hoverNode.moveNode) {
@@ -51,10 +101,12 @@ if(mouse_check_button_pressed(mb_right)) {
 		// Reduce selected actors actions and wipe nodes
 		if(hoverNode.G > selectedActor.move) {
 			selectedActor.actions -= 2;
+			wipe_buttons();
 			wipe_nodes();
 		}
 		else {
 			selectedActor.actions -= 1;
+			wipe_buttons();
 			wipe_nodes();
 		}
 		
@@ -68,8 +120,9 @@ if(mouse_check_button_pressed(mb_right)) {
 				selectedActor.actions -= 1;
 				selectedActor.attackTarget = hoverNode.occupant;
 				selectedActor.state = "beginAttack";
-				selectedActor.attackTimer = 10;
+				selectedActor.actionTimer = 10;
 				selectedActor = noone;
+				wipe_buttons();
 				wipe_nodes();
 				break;
 			case "melee":
@@ -82,8 +135,9 @@ if(mouse_check_button_pressed(mb_right)) {
 					// Adjacent to target
 					selectedActor.actions -= 1;
 					selectedActor.state = "beginAttack";
-					selectedActor.attackTimer = 10;
+					selectedActor.actionTimer = 10;
 					selectedActor = noone;
+					wipe_buttons();
 					wipe_nodes();
 				}
 				else {
@@ -121,6 +175,7 @@ if(mouse_check_button_pressed(mb_right)) {
 					selectedActor.actions -= 2;
 					selectedActor.canAct = false;
 					selectedActor = noone;
+					wipe_buttons();
 					wipe_nodes();
 				}
 				

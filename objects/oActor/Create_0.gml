@@ -31,7 +31,8 @@ hitPoints = maxHitPoints;
 hitBonus = profMod + strMod;
 attackType = "melee";
 attackTarget = noone;
-attackTimer = 0;
+
+actionTimer = 0;
 
 // Damage variables
 damageDice = 4;
@@ -50,9 +51,16 @@ canAct = false;
 charge = false;
 sneakAttack = false;
 
+// Spell and action variables
+readiedAction = "error";
+
 // Initiative variables
 initiative = dexMod;
 initRoll = 0;
+
+// Variables related to buttons
+defaultActions = ds_list_create();
+ds_list_add(defaultActions, "endTurn");
 
 
 // Pathfinding variables //////////////////////////////////////

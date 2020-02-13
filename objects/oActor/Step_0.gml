@@ -10,8 +10,8 @@ switch(state) {
 		break;
 		
 	case "beginAttack":
-		attackTimer -= 1;
-		if(attackTimer <= 0) {
+		actionTimer -= 1;
+		if(actionTimer <= 0) {
 			state = "attack";
 		}
 		break;
@@ -90,7 +90,7 @@ switch(state) {
 				}
 				
 				state = "endAttack";
-				attackTimer = 30;
+				actionTimer = 30;
 				break;
 			
 			case "melee":
@@ -137,14 +137,14 @@ switch(state) {
 				}
 				
 				state = "endAttack";
-				attackTimer = 10;
+				actionTimer = 10;
 				break;
 		}
 		break;
 		
 	case "endAttack":
-		attackTimer -= 1;
-		if(attackTimer <= 0) {
+		actionTimer -= 1;
+		if(actionTimer <= 0) {
 			if(actions > 0) {
 				oCursor.selectedActor = id;
 				movement_range(map[gridX, gridY], move, actions);
@@ -153,6 +153,38 @@ switch(state) {
 				oGame.currentActor = noone;
 			}
 			
+			state = "idle";
+		}
+		break;
+		
+	case "beginAction":
+		break;
+		
+	case "performAction":
+		perform_action(id, readiedAction);
+		wipe_nodes();
+		break;
+	
+	case "endAction":
+		actionTimer -= 1;
+		if(actionTimer <= 0) {
+			state = "idle";
+			if(actions > 0) {
+				movement_range(map[gridX, gridY], move, actions);
+			}
+			else {
+				state = "idle";
+				oCursor.selectedActor = noone;
+				oGame.currentActor = noone;
+			}
+		}
+		break;
+	
+	case "endTurn":
+		actionTimer -= 1;
+		if(actionTimer <= 0) {
+			oCursor.selectedActor = noone;
+			oGame.currentActor = noone;
 			state = "idle";
 		}
 		break;

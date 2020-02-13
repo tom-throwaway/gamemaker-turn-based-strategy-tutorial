@@ -27,7 +27,7 @@ hitBonus = profMod + dexMod;
 attackType = "ranged";
 attackRange = 15 * global.GRID_SIZE;
 attackTarget = noone;
-attackTimer = 0;
+actionTimer = 0;
 
 // Damage variables
 damageDice = 6;

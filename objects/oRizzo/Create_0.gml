@@ -27,7 +27,7 @@ hitPoints = maxHitPoints;
 hitBonus = profMod + strMod;
 attackType = "melee";
 attackTarget = noone;
-attackTimer = 0;
+actionTimer = 0;
 
 // Damage variables
 damageDice = 8;
