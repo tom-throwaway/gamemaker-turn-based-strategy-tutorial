@@ -79,6 +79,11 @@ endPath = "idle";
 
 moveSpeed = 8;
 
+// Variables related to buffs/debuffs
+blessed = 0;
+acidBurn = 0;
+guidingBolt = false;
+
 // Variables related to effects
 shake = 0;
 shakeMag = 0;

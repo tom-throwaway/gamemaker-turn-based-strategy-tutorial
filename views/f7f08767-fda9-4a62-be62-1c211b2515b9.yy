@@ -12,7 +12,10 @@
         "6d521293-a20a-4da3-a5a5-1800b94103fc",
         "8f351cae-66b1-46a7-9459-789e14b52a50",
         "6c0a01e0-5c36-4d7b-8127-36d78130b330",
-        "d7b15c8f-3bf0-4c03-b706-dd87889d3b0f"
+        "d7b15c8f-3bf0-4c03-b706-dd87889d3b0f",
+        "e9dc4409-919a-4ebd-bb39-1655b160009c",
+        "8f7f4922-b900-41bd-ad88-abab3db1be9a",
+        "9b1621f0-be10-4ba5-8930-e18abe794ff3"
     ],
     "filterType": "GMObject",
     "folderName": "Effects and UI",

@@ -22,6 +22,20 @@ switch(button.title) {
 		break;
 		
 	// Cleric spells
+	case "BLESS":
+		actor.state = "beginAction";
+		actor.readiedAction = "Bless";
+		actor.targetingType = "visibleAllies";
+		actor.actionRange = 640;
+		with(instance_create_layer(room_width / 2, room_height, "ButtonLayer", oConfirmButton)) {
+			title = other.button.title;
+			text = other.button.text;
+		}
+		
+		wipe_nodes();
+		wipe_buttons();
+		break;
+		
 	case "HEALING WORD":
 		actor.state = "beginAction";
 		actor.readiedAction = "Healing Word";
@@ -36,7 +50,36 @@ switch(button.title) {
 		wipe_buttons();
 		break;
 	
+	case "GUIDING BOLT":
+		actor.state = "beginAction";
+		actor.readiedAction = "Guiding Bolt";
+		actor.targetingType = "visibleEnemies";
+		actor.actionRange = 640;
+		with(instance_create_layer(room_width / 2, room_height, "ButtonLayer", oConfirmBox)) {
+			title = other.button.title;
+			text = other.button.text;
+		}
+		
+		wipe_nodes();
+		wipe_buttons();
+		break;
+	
 	// Wizard spells
+	case "ACID ORB":
+		actor.state = "beginAction";
+		actor.readiedAction = "Acid Orb";
+		actor.targetingType = "visibleEnemies";
+		actor.actionRange = 640;
+		
+		with(instance_create_layer(room_width / 2, room_height, "ButtonLayer", oConfirmBox)) {
+			title = other.button.title;
+			text = other.button.text;
+		}
+		
+		wipe_nodes();
+		wipe_buttons();
+		break;
+		
 	case "BURNING HANDS":
 		actor.state = "beginAction";
 		actor.readiedAction = "Burning Hands";

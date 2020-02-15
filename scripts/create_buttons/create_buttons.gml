@@ -35,6 +35,18 @@ for(ii = 0; ii < ds_list_size(buttonList); ii++) {
 			}
 			break;
 		// Cleric spells
+		case "Bless":
+			with(instance_create_layer(buttonX + (ii * 96), buttonY, "ButtonLayer", oButton)) {
+				//sprite_index = sButtonEndTurn;
+				title = "BLESS";
+				text = "Give all party members a small bonus to attack and save rolls (5 rounds)";
+				hotKey = string(other.ii + 1);
+				
+				spell = true;
+				spellSlot = string(other.actor.firstLevelSlot);
+			}
+			break;
+			
 		case "Healing Word":
 			with(instance_create_layer(buttonX + (ii * 96), buttonY, "ButtonLayer", oButton)) {
 				//sprite_index = sButtonEndTurn;
@@ -47,7 +59,31 @@ for(ii = 0; ii < ds_list_size(buttonList); ii++) {
 			}
 			break;
 		
+		case "Guiding Bolt":
+			with(instance_create_layer(buttonX + (ii * 96), buttonY, "ButtonLayer", oButton)) {
+				//sprite_index = sButtonEndTurn;
+				title = "GUIDING BOLT";
+				text = "Right click an emeny to fire an illuminating bolt #4D6 RADIANT DAMAGE #ADVANTAGE ON NEXT ATTACK";
+				hotKey = string(other.ii + 1);
+				
+				spell = true;
+				spellSlot = string(other.actor.firstLevelSlot);
+			}
+			break;
+		
 		// Wizard spells
+		case "Acid Orb":
+			with(instance_create_layer(buttonX + (ii * 96), buttonY, "ButtonLayer", oButton)) {
+				//sprite_index = sButtonEndTurn;
+				title = "ACID ORB";
+				text = "Right click an enemy to fire an orb of deadly acid! #3D10 ACID DAMAGE #ONGOING BURN";
+				hotKey = string(other.ii + 1);
+				
+				spell = true;
+				spellSlot = string(other.actor.firstLevelSlot);
+			}
+			break;
+			
 		case "Burning Hands":
 			with(instance_create_layer(buttonX + (ii * 96), buttonY, "ButtonLayer", oButton)) {
 				//sprite_index = sButtonEndTurn;

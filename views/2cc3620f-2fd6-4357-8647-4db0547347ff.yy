@@ -6,7 +6,8 @@
     "children": [
         "d1fc8c0e-ef14-44c1-9de0-9745acec5eb4",
         "46552241-ae59-42b8-852e-4c721dcdf486",
-        "fece07db-dc17-46ea-9a20-b917f322f0ec"
+        "fece07db-dc17-46ea-9a20-b917f322f0ec",
+        "99ecb90c-acfa-4a80-bf0e-37dec9ce87e4"
     ],
     "filterType": "GMScript",
     "folderName": "Actions and spells",

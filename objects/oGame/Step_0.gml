@@ -65,24 +65,7 @@ switch(state) {
 			
 			currentActor.actions = 2;
 			currentActor.canAct = true;
-			
-			if(currentActor.army == global.BLUE_ARMY) {
-				oCursor.selectedActor = currentActor;
-				movement_range(map[currentActor.gridX, currentActor.gridY], currentActor.move, currentActor.actions);
-			
-				switch(currentActor.attackType) {
-					case "ranged":
-						ranged_attack_range(currentActor);
-						break;
-					case "melee":
-						melee_attack_range(currentActor);
-						break;
-				}
-			}
-			else {
-				currentActor.flash = true;
-				currentActor.alarm[0] = 30;
-			}
+			currentActor.state = "initializeTurn";
 		}
 	
 		break;

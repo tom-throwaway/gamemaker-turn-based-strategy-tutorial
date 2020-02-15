@@ -4,6 +4,48 @@
 shake -= 1;
 
 switch(state) {
+	case "initializeTurn":
+		if(blessed > oGame.roundCounter) {
+			with(instance_create_layer(x, y, "EffectsLayer", oBless)) {
+				target = other;	
+			}
+		}
+		else {
+			blessed = 0;	
+		}
+		
+		if(acidBurn > 0) {
+			damage = irandom_range(1, 4);
+			with(instance_create_layer(x + 28, y + 2, "TextLayer", oDamageText)) {
+				text = "-" + string(other.damage);
+				ground = y;
+			}
+			hitPoints -= damage;
+			acidBurn -= 1;
+		}
+		
+		if(army == global.BLUE_ARMY) {
+			movement_range(map[gridX, gridY], move, actions);
+			switch(attackType) {
+				case "melee":
+					melee_attack_range(id);
+					break;
+				
+				case "ranged":
+					ranged_attack_range(id);
+					break;
+			}
+			
+			oCursor.selectedActor = id;
+		}
+		else {
+			flash = true;
+			alarm[0] = 30;
+		}
+		
+		state = "ready";
+		break;
+		
 	case "beginPath":
 		path_start(movementPath, moveSpeed, 0, true);
 		state = "moving";
@@ -36,17 +78,7 @@ switch(state) {
 		}
 		
 		// Determine outcome of attack
-		if(attackRoll == 20) {
-			attackStatus = "crit";	
-		}
-		else {
-			if(attackRoll + hitBonus >= attackTarget.armourClass) {
-				attackStatus = "hit";	
-			}
-			else {
-				attackStatus = "miss";	
-			}
-		}
+		attackStatus = attack_roll(id, attackTarget);
 				
 		// Make the damage roll
 		tempDamage = 0;

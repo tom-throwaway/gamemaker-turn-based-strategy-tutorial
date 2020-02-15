@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "160a4bd7-efae-48f9-8800-3f164068ad18",
+            "Value": {
+                "id": "00a81110-b9de-481e-a691-bd25601c4f6d",
+                "resourcePath": "sprites\\sBless\\sBless.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "17513bcd-03b1-496b-a2f8-7583bd6bb2a8",
             "Value": {
                 "id": "fe00ea8f-c22c-48e2-8bf4-6acb0776b24d",
@@ -407,6 +415,14 @@
             }
         },
         {
+            "Key": "8f7f4922-b900-41bd-ad88-abab3db1be9a",
+            "Value": {
+                "id": "31da1574-482c-4565-9f62-d709808253d3",
+                "resourcePath": "objects\\oAcidOrb\\oAcidOrb.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "95a369c9-34f2-4bed-97ec-f4fd7e647f53",
             "Value": {
                 "id": "b88d8bf9-e0a0-44b6-91a2-728647c33d79",
@@ -423,11 +439,27 @@
             }
         },
         {
+            "Key": "99ecb90c-acfa-4a80-bf0e-37dec9ce87e4",
+            "Value": {
+                "id": "454bc98c-5d16-45c7-851f-517f0f6e3ac4",
+                "resourcePath": "scripts\\attack_roll\\attack_roll.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9ab92993-adac-4a08-af7c-66ea954e9316",
             "Value": {
                 "id": "bf7f2315-1e18-4ead-973f-5e92f7cfa390",
                 "resourcePath": "scripts\\melee_attack_range\\melee_attack_range.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9b1621f0-be10-4ba5-8930-e18abe794ff3",
+            "Value": {
+                "id": "18ff2d23-67a2-4573-a9a7-f347ca4fb062",
+                "resourcePath": "objects\\oGuidingBolt\\oGuidingBolt.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -519,6 +551,14 @@
             }
         },
         {
+            "Key": "c6fb5a70-2257-427d-b034-1f7ccd3ebd74",
+            "Value": {
+                "id": "e22c7415-1000-48bd-81b4-9c4656e89ade",
+                "resourcePath": "sprites\\sGuidingBolt\\sGuidingBolt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "36e8cd3a-6ea5-4873-9110-7e2774f7e1fd",
@@ -599,11 +639,27 @@
             }
         },
         {
+            "Key": "dc5b35d2-bacb-4cd0-892e-5767b76e7da4",
+            "Value": {
+                "id": "0921f359-4cc6-4610-bad2-528d997e01cf",
+                "resourcePath": "sprites\\sAcidOrb\\sAcidOrb.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "deb248e4-99dc-4650-9ef8-414df2adeb37",
             "Value": {
                 "id": "71d1db9b-c09e-4fae-9158-a011adc6ffa3",
                 "resourcePath": "scripts\\color_move_node\\color_move_node.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e9dc4409-919a-4ebd-bb39-1655b160009c",
+            "Value": {
+                "id": "4fe19c80-a260-4623-ab87-41161ad732f2",
+                "resourcePath": "objects\\oBless\\oBless.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -685,6 +741,7 @@
         "d1fc8c0e-ef14-44c1-9de0-9745acec5eb4",
         "46552241-ae59-42b8-852e-4c721dcdf486",
         "fece07db-dc17-46ea-9a20-b917f322f0ec",
+        "99ecb90c-acfa-4a80-bf0e-37dec9ce87e4",
         "483ed657-0b28-454b-8980-6712070ba753",
         "0b8c8a0a-8498-4bfd-b501-ec80ab538704",
         "0bc5f2fa-7768-49e7-aba9-33d87c27994a",

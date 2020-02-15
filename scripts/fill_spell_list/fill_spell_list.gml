@@ -11,9 +11,9 @@ for(ii = 1; ii <= level; ii++) {
 		case "Cleric":
 			switch(ii) {
 				case 1:
-					//ds_list_add(actor.firstLevelSpellList, "Bless");
+					ds_list_add(actor.firstLevelSpellList, "Bless");
 					ds_list_add(actor.firstLevelSpellList, "Healing Word");
-					//ds_list_add(actor.firstLevelSpellList, "Guiding Bolt");
+					ds_list_add(actor.firstLevelSpellList, "Guiding Bolt");
 					break;
 			}
 			break;
@@ -22,7 +22,7 @@ for(ii = 1; ii <= level; ii++) {
 			switch(ii) {
 				case 1:
 					ds_list_add(actor.firstLevelSpellList, "Magic Missiles");
-					//ds_list_add(actor.firstLevelSpellList, "Acid Orb");
+					ds_list_add(actor.firstLevelSpellList, "Acid Orb");
 					ds_list_add(actor.firstLevelSpellList, "Burning Hands");
 					break;
 			}
