@@ -1,6 +1,18 @@
  /// @description Insert description here
 // You can write your code in this editor
 
+if(keyboard_check_pressed(vk_delete)) {
+	oCursor.selectedActor = noone;
+	oGame.currentActor = noone;
+	with(oActor) {
+		if(army == global.BLUE_ARMY) {
+			instance_destroy();	
+		}
+	}
+	wipe_nodes();
+	wipe_buttons();
+}
+
 switch(state) {
 	case "initialising":
 		// Loops over every oNode instance
@@ -49,25 +61,60 @@ switch(state) {
 		turnMax = ds_list_size(turnOrder);
 		ds_priority_destroy(tempInit);
 		
-		state = "ready";
+		state = "waiting";
 		break;
 		
 	case "ready":
 		if(currentActor == noone) {
-			turnCounter += 1;
-			
-			if(turnCounter >= turnMax) {
-				turnCounter = 0;
-				roundCounter += 1;
+			redCount = 0;
+			blueCount = 0;
+			with(oActor) {
+				if(army == global.RED_ARMY) {
+					other.redCount++;	
+				}
+				if(army == global.BLUE_ARMY) {
+					other.blueCount++;	
+				}
 			}
 			
-			currentActor = ds_list_find_value(turnOrder, turnCounter);
+			// If both sides have actors remaining
+			if(redCount > 0 && blueCount > 0) {
+				turnCounter += 1;
+				if(turnCounter >= turnMax) {
+					turnCounter = 0;
+					roundCounter += 1;
+				}
 			
-			currentActor.actions = 2;
-			currentActor.canAct = true;
-			currentActor.state = "initializeTurn";
+				currentActor = ds_list_find_value(turnOrder, turnCounter);
+			
+				if(instance_exists(currentActor)) {
+					currentActor.actions = 2;
+					currentActor.canAct = true;
+					currentActor.state = "initializeTurn";
+				}
+				else {
+					currentActor = noone;
+				}
+			}
+			else {
+				if(blueCount <= 0) {
+					state = "retryRoom";
+				}
+				else {
+					state = "nextRoom";	
+				}
+			}
 		}
+		break;
+		
+	case "retryRoom":
+		instance_create_layer(0, 0, "EffectsLayer", oFadeLose);
+		state = "waiting";
+		break;
 	
+	case "nextRoom":
+		instance_create_layer(0, 0, "EffectsLayer", oFadeWin);
+		state = "waiting";
 		break;
 }
 

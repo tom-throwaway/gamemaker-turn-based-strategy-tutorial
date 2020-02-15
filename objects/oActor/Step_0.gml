@@ -3,6 +3,18 @@
 
 shake -= 1;
 
+if(hitPoints <= 0) {
+	map[gridX, gridY].occupant = noone;
+	if(oGame.currentActor == id) {
+		oGame.currentActor = noone;
+		oCursor.selectedActor = noone;
+	}
+	with(instance_create_layer(x, y, "ActorLayer", oDying)) {
+		sprite_index = other.sprite_index;	
+	}
+	instance_destroy();	
+}
+
 switch(state) {
 	case "initializeTurn":
 		if(blessed > oGame.roundCounter) {

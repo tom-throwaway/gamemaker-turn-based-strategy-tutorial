@@ -42,7 +42,7 @@ with(oButton) {
 	}
 }
 
-if(keyboard_check_pressed(vk_escape)) {
+if(keyboard_check_pressed(vk_escape) && selectedActor != noone) {
 	if(selectedActor.state == "beginAction") {
 		selectedActor.state = "idle";
 		with(oConfirmButton) {
@@ -53,6 +53,7 @@ if(keyboard_check_pressed(vk_escape)) {
 		}
 	}
 	
+	wipe_buttons();
 	wipe_nodes();
 	movement_range(map[selectedActor.gridX, selectedActor.gridY], selectedActor.move, selectedActor.actions);
 	
@@ -76,6 +77,15 @@ if(mouse_check_button_pressed(mb_left)) {
 	if(instance_place(x, y, oConfirmButton)) {
 		selectedActor.state = "performAction";
 		with(oConfirmButton) {
+			instance_destroy();	
+		}
+	}
+	
+	if(instance_place(x, y, oRetryBox)) {
+		with(oFadeLose) {
+			finalize = true;	
+		}
+		with(oRetryBox) {
 			instance_destroy();	
 		}
 	}

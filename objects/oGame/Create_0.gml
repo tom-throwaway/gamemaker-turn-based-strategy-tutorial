@@ -9,6 +9,8 @@ globalvar map;
 
 state = "initialising";
 
+instance_create_layer(x, y, "EffectsLayer", oFadeIn);
+
 draw_set_font(fDefault);
 randomize();
 
