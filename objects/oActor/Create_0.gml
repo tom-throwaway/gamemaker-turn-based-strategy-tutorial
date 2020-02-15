@@ -52,7 +52,14 @@ charge = false;
 sneakAttack = false;
 
 // Spell and action variables
+spellHitBonus = 0;
+spellSaveDC = 0;
+firstLevelSlotMax = 0;
+firstLevelSlot = 0;
+
 readiedAction = "error";
+targetingType = "error";
+actionRange = 0;
 
 // Initiative variables
 initiative = dexMod;

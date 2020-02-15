@@ -48,6 +48,9 @@ if(keyboard_check_pressed(vk_escape)) {
 		with(oConfirmButton) {
 			instance_destroy();	
 		}
+		with(oConfirmBox) {
+			instance_destroy();	
+		}
 	}
 	
 	wipe_nodes();
@@ -111,7 +114,7 @@ if(mouse_check_button_pressed(mb_right)) {
 		}
 		
 		selectedActor = noone;
-	}
+	} // End moveNode block
 	
 	if(selectedActor != noone && hoverNode.attackNode) {
 		switch(selectedActor.attackType) {
@@ -181,6 +184,15 @@ if(mouse_check_button_pressed(mb_right)) {
 				
 				break;
 		}
-		
+	} // End attack node block
+	
+	if(hoverNode.actionNode) {
+		selectedActor.state = "performAction";
+		with(oConfirmBox) {
+			instance_destroy();
+		}
+		with(oConfirmButton) {
+			instance_destroy();	
+		}
 	}
 }

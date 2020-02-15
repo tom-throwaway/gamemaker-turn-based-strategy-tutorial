@@ -5,7 +5,7 @@ if(status != "miss") {
 	target.hitPoints -= damage;	
 	
 	for(ii = 0; ii < 6; ii++) {
-		with(instance_create_layer(target.x + 16, target.y + 16, "BiffLayer", oBiff)) {
+		with(instance_create_layer(target.x + 16, target.y + 16, "EffectsLayer", oBiff)) {
 			direction = irandom(360);
 			speed = irandom_range(2, 4);
 			scale = choose(2, 3);

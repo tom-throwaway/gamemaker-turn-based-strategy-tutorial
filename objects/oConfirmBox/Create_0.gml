@@ -3,9 +3,6 @@
 
 title = "ERROR";
 
-text = "Button did not receive information";
+text = "Information not passed";
 
 hotKey = "error";
-
-spell = false;
-spellSlot = "0";

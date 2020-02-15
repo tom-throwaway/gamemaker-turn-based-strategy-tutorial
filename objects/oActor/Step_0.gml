@@ -96,7 +96,7 @@ switch(state) {
 			case "melee":
 				if(attackStatus != "miss") {
 					for(ii = 0; ii < 6; ii++) {
-						with(instance_create_layer(attackTarget.x + 16, attackTarget.y + 16, "BiffLayer", oBiff)) {
+						with(instance_create_layer(attackTarget.x + 16, attackTarget.y + 16, "EffectsLayer", oBiff)) {
 							direction = irandom(360);
 							speed = choose(2, 4);
 							scale = choose(2, 3);
@@ -158,6 +158,8 @@ switch(state) {
 		break;
 		
 	case "beginAction":
+		wipe_nodes();
+		action_targeting(id, targetingType, actionRange);
 		break;
 		
 	case "performAction":

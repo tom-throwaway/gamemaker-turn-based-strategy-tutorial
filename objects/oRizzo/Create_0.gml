@@ -34,6 +34,16 @@ damageDice = 8;
 damageBonus = strMod;
 damageType = "bludgeoning";
 
+// Spell and action variables
+spellHitBonus = profMod + wisMod;
+spellSaveDC = 8 + profMod + wisMod;
+
+firstLevelSlotMax = 2;
+firstLevelSlot = 2;
+
+firstLevelSpellList = ds_list_create();
+fill_spell_list(id, level, class);
+
 // Defence variables
 armourClass = 16;
 

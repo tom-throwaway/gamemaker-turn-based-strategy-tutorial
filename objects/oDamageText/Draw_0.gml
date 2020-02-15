@@ -2,5 +2,5 @@
 // You can write your code in this editor
 
 draw_set_font(font);
-draw_text_color(x, y, text, c_red, c_red, c_red, c_red, alpha);
+draw_text_color(x, y, text, color, color, color, color, alpha);
 draw_set_font(fDefault);

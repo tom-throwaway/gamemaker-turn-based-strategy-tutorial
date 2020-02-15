@@ -8,3 +8,4 @@ grav = 1;
 text = "Default";
 fade = false;
 alpha = 1;
+color = c_red;

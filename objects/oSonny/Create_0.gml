@@ -34,6 +34,16 @@ damageDice = 4;
 damageBonus = strMod;
 damageType = "piercing";
 
+// Spell and action variables
+spellHitBonus = profMod + intMod;
+spellSaveDC = 8 + profMod + intMod;
+
+firstLevelSlotMax = 2;
+firstLevelSlot = 2;
+
+firstLevelSpellList = ds_list_create();
+fill_spell_list(id, level, class);
+
 // Defence variables
 armourClass = 10 + dexMod;
 
