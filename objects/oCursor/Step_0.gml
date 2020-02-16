@@ -29,7 +29,7 @@ if(instance_place(x, y, oButton)) {
 		buttonTimer = 0;	
 	}
 	hoverButton = instance_place(x, y, oButton);	
-	hoverNode = noone;
+	//hoverNode = noone;
 }
 else {
 	hoverButton = noone;	
