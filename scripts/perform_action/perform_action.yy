@@ -1,8 +1,12 @@
 {
-    "id": "d1fc8c0e-ef14-44c1-9de0-9745acec5eb4",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "perform_action",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Actions and spells",
+    "path": "folders/Scripts/Actions and spells.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "perform_action",
+  "tags": [],
+  "resourceType": "GMScript",
 }

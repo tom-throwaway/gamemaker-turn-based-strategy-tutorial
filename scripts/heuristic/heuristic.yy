@@ -1,8 +1,12 @@
 {
-    "id": "9fb395c9-a710-449e-8761-dad16a1d3c9d",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "heuristic",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Pathing and rangefinding",
+    "path": "folders/Scripts/Pathing and rangefinding.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "heuristic",
+  "tags": [],
+  "resourceType": "GMScript",
 }

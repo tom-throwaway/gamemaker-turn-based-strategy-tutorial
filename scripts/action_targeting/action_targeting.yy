@@ -1,8 +1,12 @@
 {
-    "id": "fece07db-dc17-46ea-9a20-b917f322f0ec",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_targeting",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Actions and spells",
+    "path": "folders/Scripts/Actions and spells.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_targeting",
+  "tags": [],
+  "resourceType": "GMScript",
 }

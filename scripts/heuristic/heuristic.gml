@@ -1,10 +1,14 @@
-// Find manhattan distance between 2 points
-//argument0 - goal node
-//argument1 - current node
+function heuristic(argument0, argument1) {
+	// Find manhattan distance between 2 points
+	//argument0 - goal node
+	//argument1 - current node
 
-goal = argument0;
-node = argument1;
+	goal = argument0;
+	node = argument1;
 
-temp = abs(goal.gridX - node.gridX) + abs(goal.gridX - node.gridX);
+	temp = abs(goal.gridX - node.gridX) + abs(goal.gridX - node.gridX);
 
-return temp;
+	return temp;
+
+
+}

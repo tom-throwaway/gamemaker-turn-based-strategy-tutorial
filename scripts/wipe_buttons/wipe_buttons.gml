@@ -1,6 +1,10 @@
+function wipe_buttons() {
 
-with(oButton) {
-	instance_destroy();	
+	with(oButton) {
+		instance_destroy();	
+	}
+
+	oCursor.hoverButton = noone;
+
+
 }
-
-oCursor.hoverButton = noone;

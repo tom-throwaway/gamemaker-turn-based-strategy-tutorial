@@ -1,8 +1,12 @@
 {
-    "id": "2c2b08b4-833e-49be-8a4a-f243de93bf20",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "create_path",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Pathing and rangefinding",
+    "path": "folders/Scripts/Pathing and rangefinding.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "create_path",
+  "tags": [],
+  "resourceType": "GMScript",
 }

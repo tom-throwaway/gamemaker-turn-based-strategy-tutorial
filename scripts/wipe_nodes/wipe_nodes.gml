@@ -1,9 +1,13 @@
-// Reset data of all nodes
-with(oNode) {
-	moveNode = false;
-	attackNode = false;
-	actionNode = false;
-	G = 0;
-	parent = noone;
-	color = c_white;
+function wipe_nodes() {
+	// Reset data of all nodes
+	with(oNode) {
+		moveNode = false;
+		attackNode = false;
+		actionNode = false;
+		G = 0;
+		parent = noone;
+		color = c_white;
+	}
+
+
 }

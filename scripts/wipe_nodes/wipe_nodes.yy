@@ -1,8 +1,12 @@
 {
-    "id": "284e6865-f804-47ed-a31b-f06a67a411d8",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "wipe_nodes",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "wipe_nodes",
+  "tags": [],
+  "resourceType": "GMScript",
 }
